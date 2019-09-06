@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: openfaas-sqs-connector
+  name: openfaas-sqs-connector
+  namespace: openfaas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: openfaas-sqs-connector
+  template:
+    metadata:
+      labels:
+        app: openfaas-sqs-connector
+    spec:
+      containers:
+      - name: openfaas-sqs-connector
+        image: "<image>"
+        args:
+        - --log-level
+        - "<log-level>"
+        - --max-number-of-messages
+        - "<max-number-of-messages>"
+        - --max-wait-time
+        - "<max-wait-time>"
+        - --openfaas-gateway-url
+        - "<openfaas-gateway-url>"
+        - --queue-url
+        - "<queue-url>"
+        - --region
+        - "<region>"
+        - --topic-refresh-interval
+        - "<topic-refresh-interval>"
+        - --visibility-timeout
+        - "<visibility-timeout>"
+        env:
+        - name: basic_auth
+          value: "true"
+        - name: secret_mount_path
+          value: /secret
+        volumeMounts:
+        - name: basic-auth
+          readOnly: true
+          mountPath: /secret
+      volumes:
+      - name: basic-auth
+        secret:
+          secretName: basic-auth
