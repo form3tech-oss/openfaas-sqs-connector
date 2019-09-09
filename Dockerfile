@@ -1,4 +1,4 @@
-FROM golang:1.12.7 AS builder
+FROM golang:1.13.0-buster AS builder
 ENV GO111MODULE on
 WORKDIR /go/src/github.com/form3tech-oss/openfaas-sqs-connector
 COPY go.mod go.sum ./
