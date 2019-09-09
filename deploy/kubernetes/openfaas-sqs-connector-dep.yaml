@@ -40,10 +40,21 @@ spec:
           value: "true"
         - name: secret_mount_path
           value: /secret
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          readOnlyRootFilesystem: true
+          runAsGroup: 65534
+          runAsNonRoot: true
+          runAsUser: 65534
         volumeMounts:
         - name: basic-auth
           readOnly: true
           mountPath: /secret
+      securityContext:
+        fsGroup: 65534
       volumes:
       - name: basic-auth
         secret:

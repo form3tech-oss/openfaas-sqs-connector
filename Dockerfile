@@ -8,6 +8,8 @@ COPY internal/ ./internal/
 RUN go build -o /openfaas-sqs-connector -v ./cmd/main.go
 
 FROM gcr.io/distroless/base
+USER nobody:nobody
+WORKDIR /
 COPY --from=builder /openfaas-sqs-connector /openfaas-sqs-connector
 ENTRYPOINT ["/openfaas-sqs-connector"]
 CMD ["--help"]
