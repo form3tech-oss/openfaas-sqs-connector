@@ -4,7 +4,7 @@ ROOT := $(shell git rev-parse --show-toplevel)
 
 VERSION ?= $(shell git describe --dirty="-dev")
 
-DOCKER_IMG ?=
+DOCKER_IMG ?= form3tech/openfaas-sqs-connector
 DOCKER_TAG ?= $(VERSION)
 
 .PHONY: docker.build
@@ -13,6 +13,7 @@ docker.build:
 
 .PHONY: docker.push
 docker.push: docker.build
+	echo "$(DOCKER_PASSWORD)" | docker login -u "$(DOCKER_USERNAME)" --password-stdin
 	docker push $(DOCKER_IMG):$(DOCKER_TAG)
 
 .PHONY: install-golangci-lint
@@ -24,4 +25,4 @@ install-deps: install-golangci-lint
 
 .PHONY: lint
 lint:
-	golangci-lint run ./... --enable-all --disable lll
+	golangci-lint run ./... --enable-all --disable lll,wsl
