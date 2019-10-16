@@ -1,5 +1,7 @@
 # openfaas-sqs-connector
 
+[![Build Status](https://travis-ci.com/form3tech-oss/openfaas-sqs-connector.svg?branch=master)](https://travis-ci.com/form3tech-oss/openfaas-sqs-connector)
+
 An OpenFaaS connector for AWS SQS.
 
 ## Goals
