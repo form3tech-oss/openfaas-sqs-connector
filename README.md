@@ -1,5 +1,7 @@
 # openfaas-sqs-connector
 
+[![Build Status](https://travis-ci.com/form3tech-oss/openfaas-sqs-connector.svg?branch=master)](https://travis-ci.com/form3tech-oss/openfaas-sqs-connector)
+
 An OpenFaaS connector for AWS SQS.
 
 ## Goals
@@ -7,22 +9,32 @@ An OpenFaaS connector for AWS SQS.
 * Allow [OpenFaaS](https://www.openfaas.com/) functions to be invoked as a result of messages being sent to an [AWS SQS](https://aws.amazon.com/sqs/) queue.
 * Allow for multiplexing different [topics](https://docs.openfaas.com/reference/triggers/#event-connector-pattern) over a single AWS SQS queue.
 
-## Building
+## Installing
 
-To build and push a Docker image for `openfaas-sqs-connector`, run
+### Helm (Experimental)
+
+To install `openfaas-sqs-connector` using Helm, run
 
 ```shell
-$ make docker.push DOCKER_IMG="<docker-img>"
+$ helm repo add openfaas-sqs-connector https://form3tech-oss.github.io/openfaas-sqs-connector
 ```
 
-replacing `<docker-img>` with the target repository's name.
-Future versions will be distributed via a pre-built Docker image, rendering this step unnecessary for most use cases.
+```shell
+$ helm repo update
+```
 
-## Installing
+```shell
+$ helm upgrade --install openfaas-sqs-connector openfaas-sqs-connector/openfaas-sqs-connector \
+  --namespace openfaas \
+  --set queueUrl=<queue-url> \
+  --set region=<region>
+```
+
+Please check [`values.yaml`](https://github.com/form3tech-oss/openfaas-sqs-connector/blob/master/helm/openfaas-sqs-connector/values.yaml) for details on how to tweak the installation. 
 
 ### Kubernetes
 
-To install `openfaas-sqs-connector` in Kubernetes, edit `./deploy/kubernetes/openfaas-sqs-connector-dep.yaml` as required in order to set appropriate values for each flag:
+To install `openfaas-sqs-connector` using `kubectl`, edit `./deploy/kubernetes/openfaas-sqs-connector-dep.yaml` as required in order to set appropriate values for each flag:
 
 Flag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Default
 ---- | ----------- | -------
@@ -39,15 +51,6 @@ Then, run
 
 ```shell
 $ kubectl create -f ./deploy/kubernetes/openfaas-sqs-connector-dep.yaml
-```
-
-To check that `openfaas-sqs-connector` has been deployed, run
-
-```shell
-$ kubectl -n openfaas -l app=openfaas-sqs-connector get pod
-NAME                                      READY   STATUS    RESTARTS   AGE
-(...)
-openfaas-sqs-connector-859d4b4f76-5nrbh   1/1     Running   0          5s
 ```
 
 ### Permissions
