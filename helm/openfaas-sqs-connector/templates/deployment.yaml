@@ -1,0 +1,54 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+{{ include "openfaas-sqs-connector.labels" . | indent 4 }}
+  name: {{ include "openfaas-sqs-connector.fullname" . }}
+  namespace: {{ .Release.Namespace | quote }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "openfaas-sqs-connector.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "openfaas-sqs-connector.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        args:
+        - --log-level
+        - "{{ .Values.logLevel }}"
+        - --max-number-of-messages
+        - "{{ .Values.maxNumberOfMessages }}"
+        - --max-wait-time
+        - "{{ .Values.maxWaitTime }}"
+        - --openfaas-gateway-url
+        - "{{ .Values.openfaasGatewayUrl }}"
+        - --queue-url
+        - "{{ required ".Values.queueUrl is required!" .Values.queueUrl }}"
+        - --region
+        - "{{ required ".Values.region is required!" .Values.region }}"
+        - --topic-refresh-interval
+        - "{{ .Values.topicRefreshInterval }}"
+        - --visibility-timeout
+        - "{{ .Values.visibilityTimeout }}"
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          readOnlyRootFilesystem: true
+          runAsGroup: 65534
+          runAsNonRoot: true
+          runAsUser: 65534
+      securityContext:
+        fsGroup: 65534
+      serviceAccountName: {{ include "openfaas-sqs-connector.fullname" . }}

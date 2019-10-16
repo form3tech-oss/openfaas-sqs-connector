@@ -1,0 +1,10 @@
+image:
+  repository: form3tech/openfaas-sqs-connector
+  tag: 1.0.0
+logLevel: info
+maxNumberOfMessages: 1
+maxWaitTime: 1
+openfaasGatewayUrl: http://gateway.openfaas.svc:8080
+topicRefreshInterval: 15
+visibilityTimeout: 30
+resources: {}
