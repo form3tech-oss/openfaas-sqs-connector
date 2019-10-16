@@ -50,6 +50,14 @@ NAME                                      READY   STATUS    RESTARTS   AGE
 openfaas-sqs-connector-859d4b4f76-5nrbh   1/1     Running   0          5s
 ```
 
+### Permissions
+
+You will need to make sure your Kubernetes worker nodes on which the SQS Connector will be deployed have a role with the following IAM permissions to interact with your SQS queues:
+
+- `sqs:DeleteMessage`
+- `sqs:ChangeMessageVisibility`
+- `sqs:ReceiveMessage`
+
 ## Testing
 
 ### Kubernetes
