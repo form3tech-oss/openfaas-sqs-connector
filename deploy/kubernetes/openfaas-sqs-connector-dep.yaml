@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: openfaas-sqs-connector
-        image: "<image>"
+        image: form3tech/openfaas-sqs-connector:1.0.0
         args:
         - --log-level
         - "<log-level>"
