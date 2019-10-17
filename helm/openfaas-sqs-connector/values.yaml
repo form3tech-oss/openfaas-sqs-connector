@@ -5,6 +5,7 @@ logLevel: info
 maxNumberOfMessages: 1
 maxWaitTime: 1
 openfaasGatewayUrl: http://gateway.openfaas.svc:8080
+replicaCount: 1
 topicRefreshInterval: 15
 visibilityTimeout: 30
 resources: {}
