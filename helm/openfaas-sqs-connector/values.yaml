@@ -1,6 +1,6 @@
 image:
   repository: form3tech/openfaas-sqs-connector
-  tag: 1.0.0
+  tag: 1.0.1
 logLevel: info
 maxNumberOfMessages: 1
 maxWaitTime: 1
