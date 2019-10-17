@@ -33,7 +33,7 @@ const (
 // MessageProcessor reads and processes messages off of an AWS SQS queue.
 type MessageProcessor struct {
 	client                   *sqs.SQS
-	controller               *types.Controller
+	controller               types.Controller
 	maxNumberOfMessages      int64
 	maxWaitTimeSeconds       int64
 	queueURL                 string
@@ -41,7 +41,7 @@ type MessageProcessor struct {
 }
 
 // NewMessageProcessor creates a new instance of MessageProcessor.
-func NewMessageProcessor(awsSQSClient *sqs.SQS, awsSQSQueueURL string, awsSQSQueueMaxNumberOfMessages int64, awsSQSQueueMaxWaitTimeSeconds int64, awsSQSQueueVisibilityTimeoutSeconds int64, controller *types.Controller) *MessageProcessor {
+func NewMessageProcessor(awsSQSClient *sqs.SQS, awsSQSQueueURL string, awsSQSQueueMaxNumberOfMessages int64, awsSQSQueueMaxWaitTimeSeconds int64, awsSQSQueueVisibilityTimeoutSeconds int64, controller types.Controller) *MessageProcessor {
 	return &MessageProcessor{
 		client:                   awsSQSClient,
 		controller:               controller,

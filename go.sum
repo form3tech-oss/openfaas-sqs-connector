@@ -8,6 +8,8 @@ github.com/konsorten/go-windows-terminal-sequences v1.0.1 h1:mweAR1A6xJ3oS2pRaGi
 github.com/konsorten/go-windows-terminal-sequences v1.0.1/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/openfaas-incubator/connector-sdk v0.0.0-20190809150732-d7e120f2b280 h1:eKYw+mJs/iKn+OGVT+oWleisyxV7AcfT6emfYTjHat0=
 github.com/openfaas-incubator/connector-sdk v0.0.0-20190809150732-d7e120f2b280/go.mod h1:jHCtd1HCZwhuwdPy4OB8CQU7ZqzxBdWNhIhH/khCJqQ=
+github.com/openfaas-incubator/connector-sdk v0.0.0-20191017091811-752212ce352a h1:Z/avkGCoMFwqLlCCYMwA/IgEvp2AtzE519fhnmMTMwg=
+github.com/openfaas-incubator/connector-sdk v0.0.0-20191017091811-752212ce352a/go.mod h1:jHCtd1HCZwhuwdPy4OB8CQU7ZqzxBdWNhIhH/khCJqQ=
 github.com/openfaas/faas v0.0.0-20190721081343-a156f26443b4 h1:q9gYvb+eLDxLaREnhR1zPhdmV0fsERL1F4dNseqL+8A=
 github.com/openfaas/faas v0.0.0-20190721081343-a156f26443b4/go.mod h1:E0m2rLup0Vvxg53BKxGgaYAGcZa3Xl+vvL7vSi5yQ14=
 github.com/openfaas/faas v0.0.0-20190905062724-360fac0c2dd8 h1:rx01wutsmkDyyovjENhibKPICg+6AL3AZrtg7G3tTwg=
