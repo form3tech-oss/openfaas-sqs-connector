@@ -10,6 +10,10 @@ github.com/openfaas-incubator/connector-sdk v0.0.0-20190809150732-d7e120f2b280 h
 github.com/openfaas-incubator/connector-sdk v0.0.0-20190809150732-d7e120f2b280/go.mod h1:jHCtd1HCZwhuwdPy4OB8CQU7ZqzxBdWNhIhH/khCJqQ=
 github.com/openfaas-incubator/connector-sdk v0.0.0-20191017091811-752212ce352a h1:Z/avkGCoMFwqLlCCYMwA/IgEvp2AtzE519fhnmMTMwg=
 github.com/openfaas-incubator/connector-sdk v0.0.0-20191017091811-752212ce352a/go.mod h1:jHCtd1HCZwhuwdPy4OB8CQU7ZqzxBdWNhIhH/khCJqQ=
+github.com/openfaas-incubator/connector-sdk v0.0.0-20191019092304-75603247065b h1:SceTY9ENKj2BdLU7MUnN8ZGvn8Thtf7Q+nyWZZtA0+U=
+github.com/openfaas-incubator/connector-sdk v0.0.0-20191019092304-75603247065b/go.mod h1:jHCtd1HCZwhuwdPy4OB8CQU7ZqzxBdWNhIhH/khCJqQ=
+github.com/openfaas-incubator/connector-sdk v0.0.0-20191019094425-193b73292e32 h1:euu/YR009hvhDXYs5LZKzQcmYuhlv+5UmHY5bLsTqrg=
+github.com/openfaas-incubator/connector-sdk v0.0.0-20191019094425-193b73292e32/go.mod h1:jHCtd1HCZwhuwdPy4OB8CQU7ZqzxBdWNhIhH/khCJqQ=
 github.com/openfaas/faas v0.0.0-20190721081343-a156f26443b4 h1:q9gYvb+eLDxLaREnhR1zPhdmV0fsERL1F4dNseqL+8A=
 github.com/openfaas/faas v0.0.0-20190721081343-a156f26443b4/go.mod h1:E0m2rLup0Vvxg53BKxGgaYAGcZa3Xl+vvL7vSi5yQ14=
 github.com/openfaas/faas v0.0.0-20190905062724-360fac0c2dd8 h1:rx01wutsmkDyyovjENhibKPICg+6AL3AZrtg7G3tTwg=

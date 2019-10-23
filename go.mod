@@ -4,7 +4,7 @@ go 1.12
 
 require (
 	github.com/aws/aws-sdk-go v1.23.15
-	github.com/openfaas-incubator/connector-sdk v0.0.0-20191017091811-752212ce352a
+	github.com/openfaas-incubator/connector-sdk v0.0.0-20191019094425-193b73292e32
 	github.com/openfaas/faas v0.0.0-20190721081343-a156f26443b4 // indirect
 	github.com/openfaas/faas-provider v0.0.0-20190805121934-a7f9772feb70 // indirect
 	github.com/pkg/errors v0.8.1 // indirect
