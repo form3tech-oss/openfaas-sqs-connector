@@ -2,7 +2,7 @@ SHELL := /bin/bash
 
 ROOT := $(shell git rev-parse --show-toplevel)
 
-VERSION ?= $(shell git describe --dirty="-dev")
+VERSION ?= $(shell git describe --tags --dirty="-dev")
 
 DOCKER_IMG ?= form3tech/openfaas-sqs-connector
 DOCKER_TAG ?= $(VERSION)
