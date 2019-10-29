@@ -22,6 +22,8 @@ spec:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         args:
+        - --endpoint
+        - "{{ .Values.endpoint }}"
         - --log-level
         - "{{ .Values.logLevel }}"
         - --max-number-of-messages

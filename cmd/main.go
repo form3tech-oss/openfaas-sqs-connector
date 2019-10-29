@@ -29,6 +29,7 @@ import (
 
 func main() {
 	// Parse command-line flags.
+	endpoint := flag.String("endpoint", "", "the aws sqs endpoint url to use")
 	logLevel := flag.String("log-level", "info", "the log level to use")
 	maxNumberOfMessages := flag.Int64("max-number-of-messages", 1, "the maximum number of messages to return from the aws sqs queue per iteration")
 	maxWaitTime := flag.Int64("max-wait-time", 1, "the maximum amount of time (in seconds) to wait for messages to be returned from the aws sqs queue per iteration")
@@ -48,13 +49,13 @@ func main() {
 
 	// Make sure that all required flags have been provided.
 	if *region == "" {
-		log.Fatal("--aws-region must be provided")
+		log.Fatal("--region must be provided")
 	}
 	if *queueURL == "" {
-		log.Fatal("--aws-sqs-queue-url must be provided")
+		log.Fatal("--queue-url must be provided")
 	}
 	if *openfaasGatewayURL == "" {
-		log.Fatal("--gateway-url must be provided")
+		log.Fatal("--openfaas-gateway-url must be provided")
 	}
 
 	// Initialize the controller.
@@ -68,6 +69,7 @@ func main() {
 
 	// Initialize the AWS SQS client.
 	awsSession, err := session.NewSession(&aws.Config{
+		Endpoint:                      endpoint,
 		CredentialsChainVerboseErrors: aws.Bool(log.IsLevelEnabled(log.DebugLevel)),
 		Region:                        region,
 	})
