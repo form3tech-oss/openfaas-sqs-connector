@@ -32,12 +32,13 @@ $ helm upgrade --install openfaas-sqs-connector openfaas-sqs-connector/openfaas-
 
 Please check [`values.yaml`](https://github.com/form3tech-oss/openfaas-sqs-connector/blob/master/helm/openfaas-sqs-connector/values.yaml) for details on how to tweak the installation. 
 
-### Kubernetes
+### `kubectl`
 
 To install `openfaas-sqs-connector` using `kubectl`, edit `./deploy/kubernetes/openfaas-sqs-connector-dep.yaml` as required in order to set appropriate values for each flag:
 
 Flag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Default
 ---- | ----------- | -------
+`--endpoint` | The AWS SQS endpoint to use. Useful when using [`elasticmq`](https://github.com/softwaremill/elasticmq) for local development. | `""`
 `--log-level` | The log level to use. | `info`
 `--max-number-of-messages` | The maximum number of messages to return from the AWS SQS queue per iteration. | `1`
 `--max-wait-time` | The maximum amount of time (in seconds) to wait for messages to be returned from the AWS SQS queue per iteration. | `1`
