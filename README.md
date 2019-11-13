@@ -9,6 +9,13 @@ An OpenFaaS connector for AWS SQS.
 * Allow [OpenFaaS](https://www.openfaas.com/) functions to be invoked as a result of messages being sent to an [AWS SQS](https://aws.amazon.com/sqs/) queue.
 * Allow for multiplexing different [topics](https://docs.openfaas.com/reference/triggers/#event-connector-pattern) over a single AWS SQS queue.
 
+## Usage
+
+To start receiving messages from an SQS queue in your OpenFaas functions:
+* Install an instance of openfaas-sqs-connector configured to receive from the queue.
+* Add a `topic` annotation to each OpenFaaS function denoting which topic you'd like to receive. Alternatively you can set the topic to the queue url to receive all messages from that queue.
+* Add messages to the SQS queue with a `Topic` message attribute to route to specific functions.
+
 ## Installing
 
 ### Helm (Experimental)
