@@ -2,8 +2,23 @@ apiVersion: v1
 entries:
   openfaas-sqs-connector:
   - apiVersion: v1
+    appVersion: 1.1.0
+    created: "2019-11-13T10:59:39.672406Z"
+    description: An OpenFaaS connector for AWS SQS.
+    digest: ca99a0f49f65e7c72940427e07098a7f86f23f8cde76ba4fcdb9e4d6f0366196
+    home: https://github.com/form3tech-oss/openfaas-sqs-connector
+    maintainers:
+    - email: brunomcustodio@gmail.com
+      name: bmcstdio
+    name: openfaas-sqs-connector
+    sources:
+    - https://github.com/form3tech-oss/openfaas-sqs-connector
+    urls:
+    - https://form3tech-oss.github.io/openfaas-sqs-connector/openfaas-sqs-connector-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v1
     appVersion: 1.0.1
-    created: "2019-10-17T11:31:54.984895+01:00"
+    created: "2019-11-13T10:59:39.672162Z"
     description: An OpenFaaS connector for AWS SQS.
     digest: 38c93656ed915b5de5ac6647b4abe765e3bacdc84f6e240eb2f78eac7aa609de
     home: https://github.com/form3tech-oss/openfaas-sqs-connector
@@ -18,7 +33,7 @@ entries:
     version: 1.0.2
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2019-10-17T11:31:54.984626+01:00"
+    created: "2019-11-13T10:59:39.671927Z"
     description: An OpenFaaS connector for AWS SQS.
     digest: 894b2b26e6a3172c3d87b80eaf75079f8f33143e7bfea922014808d52d39649f
     home: https://github.com/form3tech-oss/openfaas-sqs-connector
@@ -33,7 +48,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2019-10-17T11:31:54.984344+01:00"
+    created: "2019-11-13T10:59:39.671629Z"
     description: An OpenFaaS connector for AWS SQS.
     digest: 100f62d3a0218ce349c34e4a8bf4a45029764b66b030895c2432194f494ea46a
     home: https://github.com/form3tech-oss/openfaas-sqs-connector
@@ -46,4 +61,4 @@ entries:
     urls:
     - https://form3tech-oss.github.io/openfaas-sqs-connector/openfaas-sqs-connector-1.0.0.tgz
     version: 1.0.0
-generated: "2019-10-17T11:31:54.983633+01:00"
+generated: "2019-11-13T10:59:39.671235Z"
